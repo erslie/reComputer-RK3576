@@ -1,0 +1,9 @@
+# スクリプトは macOS で実行するため LF 固定
+*.sh text eol=lf
+*.md text eol=lf
+# バイナリ素材
+*.pdf binary
+*.gz binary
+*.elf binary
+*.bin binary
+*.gpg binary
