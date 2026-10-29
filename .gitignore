@@ -1,0 +1,12 @@
+# ビルド成果物・作業中の実データ（調査ごとに生成される）
+tools/
+workdir/
+
+# 大きい/機微な実機ダンプは誤コミットしない
+*.img
+*.pcap
+*.pcapng
+
+# OS
+.DS_Store
+Thumbs.db
