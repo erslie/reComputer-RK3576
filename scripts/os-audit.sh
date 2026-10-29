@@ -18,7 +18,7 @@ KNOWN_FP="31C1 8788 0FFB 20E2 9D54 BFFA 266A 668B 2BF2 698C"
 REMOTE_CMDS='
 echo "########## HOST ##########"; uname -a; cat /etc/os-release 2>/dev/null | head -3
 echo; echo "########## Integrity (tamper check: any output = a difference) ##########"
-command -v debsums >/dev/null && sudo debsums -s 2>/dev/null || echo "(debsums not installed: sudo apt install debsums)"
+if command -v debsums >/dev/null; then sudo debsums -s 2>&1; else echo "(debsums not installed: sudo apt install debsums)"; fi
 echo "--- dpkg -V (changed package files) ---"; sudo dpkg -V 2>/dev/null | head -200
 echo; echo "########## Listening ports ##########"; sudo ss -tulpn
 echo; echo "########## Enabled systemd units ##########"; systemctl list-unit-files --state=enabled --no-pager 2>/dev/null
